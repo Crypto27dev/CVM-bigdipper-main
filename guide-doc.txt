@@ -1,0 +1,7 @@
+https://docs.bigdipper.live/cosmos-based/overview
+
+-- Importing the metadata
+1. hasura docker running
+docker compose up -d
+2. import metadata from graphql
+hasura metadata apply --endpoint https://graph.cosvm.net/v1/graphql --admin-secret qXD8ZnmW447aL69bdjuno!
