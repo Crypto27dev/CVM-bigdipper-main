@@ -1,0 +1,30 @@
+https://docs.bigdipper.live/cosmos-based/overview
+
+********For restart bigdipper(delete the bdjuno database, create database again, bdjuno and hasura restart)
+
+systemctl stop bdjuno
+
+1. In ./bdjuno/hasura/ please run this command.
+docker compose down
+
+2. drop database bdjuno
+drop database blockscout
+
+3. initial database
+psql -U user_name ...
+
+4. start the bdjuno service
+
+5. start hasura
+- In directory /bdjuno/hasura/
+docker compose up -d
+- In Husura website, please connect database.
+- Then please run hasura metadata command.
+hasura metadata apply --endpoint http://localhost:8080 --admin-secret qXD8ZnmW447aL69bdjuno!
+hasura metadata apply --endpoint https://graph.cosvm.net/v1/graphql --admin-secret qXD8ZnmW447aL69bdjuno!
+
+bdjuno restart
+
+6. check the bigdipper.
+https://scan.cosvm.net/cvm
+http://15.235.196.1:3001/cvm
